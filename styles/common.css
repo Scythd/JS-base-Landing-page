@@ -122,3 +122,19 @@ main {
     height: 95%;
     display: none;
 }
+
+#TopUName{
+    font-weight: 500;
+    font-size: 22px;
+    margin: 1% 2% 1% 0%;
+    color: white;
+}
+#unpause{
+    display: none;
+}
+#pause{
+    display: none;
+}
+#stop {
+    display: none;
+}
