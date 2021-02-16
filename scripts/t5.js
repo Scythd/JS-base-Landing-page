@@ -7,7 +7,6 @@ class Timer {
         
     };
     start() {
-
         this.reset();
         this.unpause();
         document.getElementById("start").style.setProperty("display","none");
