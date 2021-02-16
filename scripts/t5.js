@@ -4,23 +4,47 @@ class Timer {
     time = 0;
     curT = 0;
     constructor() {
+        
     };
     start() {
+
+        this.reset();
+        this.unpause();
+        document.getElementById("start").style.setProperty("display","none");
+        document.getElementById("stop").style.setProperty("display","inline");
+    };
+    unpause(){
         this.isWork = true;
+        document.getElementById("unpause").style.setProperty("display","none");
+        document.getElementById("pause").style.setProperty("display","inline");
     };
     pause() {
         this.isWork = false;
-    }
+        document.getElementById("unpause").style.setProperty("display","inline");
+        document.getElementById("pause").style.setProperty("display","none");
+    };
     stop() {
-        
         this.curT = this.time;
+        this.unpause();
         this.render();
         this.pause();
-    }
+        document.getElementById("unpause").style.setProperty("display","none");
+        document.getElementById("start").style.setProperty("display","inline");
+        document.getElementById("stop").style.setProperty("display","none");
+    };
     reset() {
-        let H = document.getElementById("t5H").value;
-        let M = document.getElementById("t5M").value;
-        let S = document.getElementById("t5S").value;
+        let H = Number.parseInt(document.getElementById("t5H").value);
+        if (isNaN(H)){
+            H = 0;
+        }
+        let M = Number.parseInt(document.getElementById("t5M").value);
+        if (isNaN(M)){
+            M = 0;
+        }
+        let S = Number.parseInt(document.getElementById("t5S").value);
+        if (isNaN(S)){
+            S = 0;
+        }
         this.setTime(H, M, S);
         this.stop();
     }

@@ -10,9 +10,19 @@ function setTUName(name) {
 
 function task1() {
     let text = prompt("Введите Ваше имя:");
-    alert("Hello, " + text + "!");
+    if (text == null) {
+        return;
+    }
+    while (text == "") {
+        text = prompt("Вы ничего не ввели, введите повторно.");
+        if (text == null) {
+            return;
+        }
+    }
+    alert("Привет, " + text + "!");
     window.sessionStorage.setItem("SavedUName", text);
     setTUName(text);
+
 }
 
 

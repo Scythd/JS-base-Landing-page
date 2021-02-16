@@ -2,33 +2,31 @@ function menu4() {
     menuItemsOff()
     document.getElementById("window4").style.setProperty("display", "block");
 }
-
+document.getElementById("arrElIn").value = null;
+let arr4 = new Array();
+function t4add() {
+    let temp = document.getElementById("arrElIn").value;
+    if (temp == "" || temp == null || isNaN(temp) || temp == " ") {
+        document.getElementById("t4e").innerText = "Ошибка ввода";
+    } else {
+        arr4.push(Number.parseFloat(temp));
+        document.getElementById("t4e").innerText = "Элемент успешно добавлен";
+    }
+    document.getElementById("arrElIn").value = null;
+    document.getElementById("t4r").innerText = " ";
+}
 function task4() {
-    let input = prompt("Введите массив из 5ти чисел, через запятую (Пример:1,2,5,6,3)");
-    if (input == null) { 
-        alert("Вы не ввели число"); 
-        return; 
+    arr4.sort((a, b) => a - b);
+    let r = "";
+    if (arr4.length == 0) {
+        r = "Вы не ввели ни одного числа";
     }
-    let arr = new Array();
-    let b = 0;
-    let i = 0;
-    for (; i < input.length; i++) {
-        if (input[i] == "," || input[i] == ",") {
-            let toPush = Number.parseFloat(input.substring(b, i));
-            if (!isNaN(toPush))
-                arr.push(toPush);
-            b = i + 1;
-        }
+    else if (arr4.length == 1) {
+        r = "max = " + arr4[0] + ", min = " + arr4[0];
     }
-    let toPush = Number.parseFloat(input.substring(b, input.length));
-    if (!isNaN(toPush))
-        arr.push(toPush);
-    arr.sort((a, b) => a - b);
-    console.log(arr);
-    if (arr.length == 0)
-        alert("Вы не ввели число");
-    else if (arr.length == 1)
-        alert("max = " + arr[0] + ", min = " + arr[0]);
-    else
-        alert("max = " + arr[arr.length - 1] + ", min = " + arr[0]);
+    else {
+        r = "max = " + arr4[arr4.length - 1] + ", min = " + arr4[0];
+    }
+    document.getElementById("t4r").innerText = r;
+    arr4 = new Array();
 }

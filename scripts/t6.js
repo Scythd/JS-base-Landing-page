@@ -26,21 +26,7 @@ function t6submit() {
         }
     }
     document.getElementById("t6resHolder").innerText = "Ваш результат: " + result + "/15";
-    document.getElementById("q13").nextElementSibling.style.setProperty("background-color", "lime");
-    document.getElementById("q23").nextElementSibling.style.setProperty("background-color", "lime");
-    document.getElementById("q32").nextElementSibling.style.setProperty("background-color", "lime");
-    document.getElementById("q42").nextElementSibling.style.setProperty("background-color", "lime");
-    document.getElementById("q51").nextElementSibling.style.setProperty("background-color", "lime");
-    document.getElementById("q63").nextElementSibling.style.setProperty("background-color", "lime");
-    document.getElementById("q72").nextElementSibling.style.setProperty("background-color", "lime");
-    document.getElementById("q81").nextElementSibling.style.setProperty("background-color", "lime");
-    document.getElementById("q94").nextElementSibling.style.setProperty("background-color", "lime");
-    document.getElementById("q101").nextElementSibling.style.setProperty("background-color", "lime");
-    document.getElementById("q111").nextElementSibling.style.setProperty("background-color", "lime");
-    document.getElementById("q121").nextElementSibling.style.setProperty("background-color", "lime");
-    document.getElementById("q132").nextElementSibling.style.setProperty("background-color", "lime");
-    document.getElementById("q141").nextElementSibling.style.setProperty("background-color", "lime");
-    document.getElementById("q154").nextElementSibling.style.setProperty("background-color", "lime");
+    ans.forEach((x)=>document.getElementById(x).nextElementSibling.style.setProperty("background-color", "lime"));
 }
 function t6nt() {
     document.getElementById("t6resHolder").innerText = "Здесь будет Ваш результат";
