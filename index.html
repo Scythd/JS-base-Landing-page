@@ -10,7 +10,11 @@
 
 <body>
     <header>
+        <div class="flex jystend">
+            <p id="TopUName">
 
+            </p>
+        </div>
     </header>
     <main>
         <div class="mainflex">
@@ -76,7 +80,7 @@
                 <button id="menuback" style="display: none;" onclick="menuback()"> 1</button>
                 <div id="menu">
                     <button class="menuitem" onclick="menu1()">
-                        1. Попросить польщователя ввести имя и поприветствовать его
+                        1. Попросить пользователя ввести имя и поприветствовать его
                     </button>
                     <button class="menuitem" onclick="menu2()">
                         2. Площадь треугольника по основанию и высоте
@@ -98,11 +102,7 @@
                     </button>
                 </div>
                 <div id="window1" class="window" style="display: none;">
-                    <div class="flex jystend">
-                        <p id="TopUName">
-
-                        </p>
-                    </div>
+                    
 
                     <p>В этой задаче необходимо испольщовать функции prompt()
                         для обращения к польщователю, с целью получения от него ответа;
@@ -115,14 +115,15 @@
                     <button type="submit" onclick="task1()">Пуск</button>
                 </div>
                 <div id="window2" class="window" style="display: none;">
-                    <p>Для этого задания вам понадобятся только alert() и prompt() для диалога с польщователем,
-                        а так же операции умножения * и присваивания =</p>
+                    <p>Для этого задания вам понадобятся только alert() и prompt() для диалога с пользователем,
+                        а так же операции умножения * и присваивания =, любой цикл, метод isNaN() и оператор if 
+                        для проверки ввода на валидность</p>
                     <button type="submit" onclick="task2()">Пуск</button>
                 </div>
                 <div id="window3" class="window" style="display: none;">
                     <p>
                         вам понадобятся prompt() для диалога с пользователем,
-                        а так же let, чтобы обьявить переменную, чтобы сохранить польщовательский ввод.
+                        а так же let, чтобы обьявить переменную, чтобы сохранить пользовательский ввод.
                         поле .length ваших обьектов полученных при диалоге с пользователем для
                         получения длинны строки и оператор == для проверки на равенство и
                         вывод результата с помощью alert()
@@ -132,7 +133,7 @@
                 <div id="window4" class="window" style="display: none;">
                     <p>Для этого задания вам понадобится конструктор класса Array (Array()), чтобы создать массив,
                         prompt() для диалога
-                        с польщователем, циклическая конструкция for или while, Number.parseFloat()
+                        с пользователем, циклическая конструкция for или while, Number.parseFloat()
                         для преобразования подстроки в число, метод .substring() для строк для выделения подстрок и
                         конструкция
                         if для определения подстрок и проверки на ошибок в польщовательском вводе для обработки
@@ -145,7 +146,11 @@
                         undefined
                         если елементов в массиве меньше 2х.
                     </p>
-                    <button type="submit" onclick="task4()">Пуск</button>
+                    <input id="arrElIn" type="number">
+                    <p id="t4e">&nbsp;</p>
+                    <button onclick="t4add()">Добавить в массив</button>
+                    <button type="submit" onclick="task4()">Посчитать и очистить</button>
+                    <p id="t4r">&nbsp;</p>
                 </div>
                 <div id="window5" class="window" style="display: none;">
                     <p>
@@ -165,10 +170,10 @@
                     <input type="number" class="timerIO" name="Mins" id="t5M" placeholder="0"> M
                     <input type="number" class="timerIO" name="Secs" id="t5S" placeholder="0"> S
                     <br>
-                    <button onclick="timer1.start()">start</button>
-                    <button onclick="timer1.pause()">pause</button>
-                    <button onclick="timer1.stop()">stop</button>
-                    <button onclick="timer1.reset()">set time</button>
+                    <button id="start" onclick="timer1.start()">Начать</button>
+                    <button id="pause" onclick="timer1.pause()">Пауза</button>
+                    <button id="unpause" onclick="timer1.unpause()">Продолжить</button>
+                    <button id="stop" onclick="timer1.stop()">Стоп</button>
                     <!--button type="submit" onclick="task5()">Пуск</button-->
                 </div>
                 <div id="window6" class="window" style="display: none;">
@@ -181,7 +186,7 @@
                     </p>
                     <button id="t6launch" type="submit" onclick="task6()">Пуск</button>
                     <div id="test__holder">
-                        <button onclick="t6back()">Back</button>
+                        <button onclick="t6back()">Назад</button>
                         <!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
                         <div class="test">
                             <h3 class="test__question">
@@ -586,10 +591,10 @@
                             <br>
                         </div>
                         <!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-                        <button onclick="t6back()">Back</button>
-                        <button onclick="t6submit()">Submit</button>
-                        <button onclick="t6nt()">Try again</button>
-                        <p id="t6resHolder">Здесь будет Ваш результат</p>
+                        <button onclick="t6back()">Назад</button>
+                        <button onclick="t6submit()">Проверить</button>
+                        <button onclick="t6nt()">Попробовать снова</button>
+                        <p id="t6resHolder">&nbsp;</p>
                     </div>
 
                 </div>
